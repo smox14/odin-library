@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Library</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1>myLibrary</h1>
+		</div>
+	</header>
+	<main>
+		<section class="add-book">
+			<button class="btn btn-add" id="addBookbtn">+ Add book</button>
+		</section>
+		<section class="book-list"></section>
+	</main>
+	<footer>
+		<p>&copy
+			<script>
+				document.write(new Date().getFullYear())
+			</script>
+			
+			Smox14
+		</p>
+	</footer>
+
+	<div class="modal" id="addBookModal">
+		<form class="add-book-form" id="addBookForm">
+			<h3>Add new book</h3>
+			<input 
+				class="input"
+				type="text" 
+				id="title"
+				placeholder="Title"
+				required
+				maxlength="100"
+			/>
+			<p class="error-msg" id="errorMsg"></p>
+			<input 	
+				class="input"
+				type="text"
+				id="author"
+				placeholder="Author"
+				required
+				maxlength="100"
+			/>
+			<input 
+				class="input"
+				type="number"
+				id="pages"
+				placeholder="Pages"
+				required
+				maxlength="10000"
+			/>
+			<label class="switch">
+				<input 
+					class="switch"
+					type="checkbox"
+					id="readBtn"
+				/>
+				<div class="slider round">
+				</div>
+			</label>
+			<div class="button-group">
+				<button class="btn btn-light-grey btn-clear" type="reset"> Clear</button>
+				<button class="btn btn-light-green" type="submit">Add book</button>
+			
+		</form>
+	</div>
+</body>
+</html>
