@@ -1,4 +1,5 @@
 // Book Structure
+"use strict"
 
 class Book {
 	constructor(title, author, pages, isRead) {
