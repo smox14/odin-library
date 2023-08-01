@@ -100,6 +100,26 @@ main {
 	text-align: center;
 }
 
+.book-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: var(--spacing-xl);
+	margin-top: var(--spacing-xl);
+	height: 300px;
+}
+
+.book-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: var(--white);
+	gap: var(--spacing-xl);
+	border-radius: var(--booarder-radius);
+	margin: var(--spacing-lg);
+	padding: var(--spacing-lg);
+	line-height: 1.2;
+}
+
 /* FOOTER */
 
 footer {
