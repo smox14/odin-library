@@ -61,6 +61,7 @@ function openAddBookModal() {
 
 function closeAddBookModal() {
 	addBookModal.classList.remove('active')
+	errMsg.classList.remove('active')
 	overlay.classList.remove('active')
 }
 
@@ -117,12 +118,15 @@ function createBookCard (book) {
 	buttonGroup.classList.add('button-group')
 	readBtn.classList.add('btn')
 	removeBtn.classList.add('btn')
+	removeBtn.classList.add('btn-light-red')
+
 	readBtn.onclick = toggleRead
 	removeBtn.onclick = removeBook
 
-	title.textContent = `'${book.title}'`
-	author.textContent = book.author
-	pages.textContent = book.pages +' ' +((book.pages <= 1)? 'page': 'pages')
+	title.textContent = `Title: ${book.title}`
+	title.value = book.title
+	author.textContent = `Author: ${book.author}`
+	pages.textContent = 'Pages: ' + book.pages +' ' +((book.pages <= 1)? 'page': 'pages')
 	removeBtn.textContent = 'Remove book'
 
 	if (book.isRead) {
@@ -142,12 +146,15 @@ function createBookCard (book) {
 	bookList.append(bookCard)
 }
 
-
-
-function toggleRead() {
-	return
+function toggleRead(e) {
+	const title = e.target.parentNode.parentNode.firstChild.value
+	const book = library.getBook(title)
+	book.isRead = !book.isRead
+	updateBookList()
 }
 
-function removeBook() {
-	return
+function removeBook(e) {
+	const title = e.target.parentNode.parentNode.firstChild.value
+	library.removeBook(title)
+	updateBookList()
 }
