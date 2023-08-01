@@ -83,6 +83,10 @@ input[type='number'] {
 	background-color: var(--light-grey);
 }
 
+.btn-light-red {
+	background-color: var(--light-red);
+}
+
 /* HEADER */
 header {
 	background-color: var(--white);
