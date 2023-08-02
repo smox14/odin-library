@@ -53,6 +53,7 @@ input[type='number'] {
 	cursor: text;
 }
 
+
 /* UTILS */
 .container {
 	max-width: var(--container-width);
@@ -100,7 +101,10 @@ header {
 /* MAIN */
 
 main {
+	margin: 0 auto;
 	margin-top: var(--spacing-lg);
+	width: 80vw;
+	
 	text-align: center;
 }
 
